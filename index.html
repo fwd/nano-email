@@ -879,7 +879,7 @@ line-height: normal;
       },
       methods: {
          send() {
-            if (Number(this.amount)) return alert('Amount must be greater than 0')
+            if (!Number(this.amount)) return alert('Amount must be greater than 0')
             axios.post('https://rpc.nano.to', { 
               "action": "nano_email",
               "refund_address": this.refund_address,
