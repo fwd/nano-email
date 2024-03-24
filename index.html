@@ -879,6 +879,7 @@ line-height: normal;
       },
       methods: {
          send() {
+            if (!this.emails.length) return alert('At least one email address is required.')
             if (!Number(this.amount)) return alert('Amount must be greater than 0.')
             if (!this.refund_address) return alert('Refund address required.')
             axios.post('https://rpc.nano.to', { 
