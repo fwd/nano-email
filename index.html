@@ -525,7 +525,7 @@ line-height: normal;
                                             <tr>
                                                 <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 30px;font-size: 4 6px;line-height: 52px">
                                                   <span @click="send()" style="padding: 10px 60px 12px 50px;background: rgb(32, 156, 233);border-radius: 30px;color: rgb(255, 255, 255);font-size: 18px;min-width: 190px;">Send Nano →</span>
-                                                  <div style="font-size:16px;opacity:1;color:black">Service Fee: {{ emails.length === 1 ? 'FREE' : Number((emails.length - 1) * 0.1).toFixed(2) + ' NANO' }}</div>
+                                                  <div style="font-size:16px;opacity:1;color:black">Service Fee: {{ emails.length === 1 ? 'FREE' : Number((emails.length - 1) * 0.1).toFixed(1) + ' NANO' }}</div>
                                                 </td>
                                             </tr>
 
