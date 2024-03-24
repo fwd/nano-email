@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>You've Got Nano - Send Nano to Any Email Address</title>
+
+    <link rel="shortcut icon" href="favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--<![endif-->
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" name="viewport">
+    <meta name="viewport" content="width=device-width">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+    <!--[if lte mso 11]>
+    <style type="text/css">
+      .outlook-group-fix { width:100% !important; }
+    </style>
+<![endif]-->
+    <style type="text/css">
+      @font-face {
+        font-family: 'SofiaPro';
+        font-style: normal;
+        font-weight: normal;
+        src: url('https://api.nano.to/email/fonts/sofiaproregular-webfont.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'SofiaPro';
+        font-style: normal;
+        font-weight: 500;
+        src: url('https://api.nano.to/email/fonts/sofiapromedium-webfont.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'SofiaPro';
+        font-style: normal;
+        font-weight: 600;
+        src: url('https://api.nano.to/email/fonts/sofiaprosemibold-webfont.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'SofiaPro';
+        font-style: normal;
+        font-weight: bold;
+        src: url('https://api.nano.to/email/fonts/sofiaprobold-webfont.woff') format('woff');
+      }
+      /* FULL WIDTH CLASSES */
+      @media (max-width: 1800px) {
+        .ow100 {
+          width: 100%;
+        }
+        .ow50 {
+          width: 50%;
+        }
+        .ow70 {
+          width: 70%;
+        }
+        *[class~=opadt] {
+          padding-top: 45px !important;
+        }
+        *[class~=onegmargt] {
+          margin-top: -40px;
+        }
+        *[class~=oheight] {
+          height: 135px;
+        }
+      }
+      /* OVERALL STYLYING RESETS */
+      /* Ensure tables don’t have any extra spacing*/
+      table {
+        border-collapse: collapse;
+      }
+      /* Ensure no unwated margins on all copy*/
+      p h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+      /* Ensure that images don’t have borders, text-decoration and unwanted spacing */
+      img,
+      a img {
+        border: 0 !important;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+      }
+      /* Ensure the main body container has correct fallbacks*/
+      body,
+      #bodyTable {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Allow smoother rendering of resized image in IE */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+      /* Remove spacing between tables in Outlook 2007 and up */
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      a,
+      li,
+      td,
+      body,
+      table {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      /* FONT STYLING  */
+      h1 {
+        color: #000001;
+        font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 52px;
+        letter-spacing: normal;
+        margin: 0;
+      }
+      h2 {
+        color: #000001;
+        font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: normal;
+      }
+      h3 {
+        color: #000001;
+        font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%;
+        letter-spacing: normal;
+      }
+      h4 {
+        color: #000001;
+        font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        letter-spacing: normal;
+      }
+      p {
+        font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 150%;
+        word-break: break-word;
+      }
+      .button-border-black:hover {
+        background: #fbf8f5 !important;
+        border: 2px solid black !important;
+      }
+      .button-border-black:hover .buttontext-black {
+        color: #000000 !important;
+      }
+      .footer-hover:hover {
+        border-bottom: 2px solid #fff !important;
+        padding-bottom: 1px;
+      }
+      .product-container-hover:hover {
+        border: solid 20px white !important;
+        background: #ffffff !important;
+      }
+      .opacity:hover {
+        opacity: .9 !important;
+      }
+      /* TABLET WIDTH AND PADDING */
+      @media (max-width: 699px) {
+        .w100 {
+          width: 100% !important;
+        }
+        .w95 {
+          width: 95% !important;
+        }
+        .w90 {
+          width: 90% !important;
+        }
+        .w85 {
+          width: 85% !important;
+        }
+        .w80 {
+          width: 80% !important;
+        }
+        .w70 {
+          width: 70% !important;
+        }
+        .w50 {
+          width: 60% !important;
+        }
+        .column33 {
+          width: 33% !important;
+        }
+        .column33a {
+          width: 25% !important;
+        }
+        .column66 {
+          width: 66% !important;
+        }
+        .column50a {
+          width: 50% !important;
+        }
+        .column50 {
+          width: 100% !important;
+        }
+        .padt0 {
+          padding-top: 0px !important;
+        }
+        .padt5 {
+          padding-top: 5px !important;
+        }
+        .padt10 {
+          padding-top: 10px !important;
+        }
+        .padt15 {
+          padding-top: 15px !important;
+        }
+        .padt20 {
+          padding-top: 20px !important;
+        }
+        .padt30 {
+          padding-top: 30px !important;
+        }
+        .padb0 {
+          padding-bottom: 0px !important;
+        }
+        .padb5 {
+          padding-bottom: 5px !important;
+        }
+        .padb10 {
+          padding-bottom: 10px !important;
+        }
+        .padb15 {
+          padding-bottom: 15px !important;
+        }
+        .padb20 {
+          padding-bottom: 20px !important;
+        }
+        .padtp {
+          padding-top: 20% !important;
+        }
+        .padbp {
+          padding-bottom: 20% !important;
+        }
+        .showm {
+          display: block !important;
+          max-height: 1000px !important;
+          width: 100% !important;
+          overflow: visible !important;
+          align: center !important;
+        }
+        .showm2 {
+          overflow: visible !important;
+          align: center !important;
+        }
+        .mobile-100p {
+          width: auto !important;
+        }
+        .tcenter {
+          text-align: center !important;
+        }
+        tr.mhide {
+          display: none !important;
+          mso-hide: all;
+          font-size: 0px !important;
+          max-height: 0px !important;
+          height: 0px !important;
+          float: left !important;
+          overflow: hidden !important;
+        }
+        .mobile-hide {
+          display: none !important;
+        }
+        .logo {
+          width: 70px !important;
+        }
+        .background-color-white {
+          background-color: #ffffff !important;
+        }
+        .footer_mb {
+          font-size: 15px !important;
+          line-height: 175% !important;
+        }
+        .underline {
+          border-bottom: 2px solid #fff;
+          padding-bottom: 1px;
+        }
+      }
+      /* MB WIDTH */
+      @media (max-width: 560px) {
+        .coulumn50 {
+          width: 100% !important;
+        }
+        .w100m,
+        .coulumn50 {
+          width: 100% !important;
+        }
+        u+.body .full-wrap {
+          width: 100% !important;
+          width: 100vw !important;
+        }
+      }
+      /* Ensure large text on mb stays large if user choose to make large */
+      @media only screen and (max-width: 480px) {
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+          -webkit-text-size-adjust: none !important;
+        }
+      }
+      @media only screen and (max-width: 699px) {
+        h1 {
+          font-size: 26px !important;
+          line-height: 30px !important;
+        }
+        h2 {
+          font-size: 20px !important;
+          line-height: 28px !important;
+        }
+        h3 {
+          font-size: 18px !important;
+          line-height: 125% !important;
+        }
+        h4 {
+          font-size: 16px !important;
+          line-height: 150% !important;
+        }
+        p {
+          font-size: 16px !important;
+          line-height: 25px !important;
+        }
+      }
+    </style>
+    <style type="text/css">
+      /* CUSTOM MOBILE */
+      @media (max-width: 699px) {
+        .pad-custom {
+          padding-top: 55% !important;
+        }
+        .background-color-custom {
+          background-color: #fbf8f5 !important;
+        }
+        .img-size-custom {
+          width: 75% !important;
+        }
+      }
+      /* CUSTOM BACKGROUND IMG MOBILE */
+      @media screen and (max-width:699px) {
+        .imageswap {
+          background: url("https://api.nano.to/email/background-two.png") no-repeat !important;
+          background-size: 102% auto !important;
+          max-width: 100% !important;
+          background-color: #fdfdfd !important;
+          background-position: bottom !important;
+        }
+      }
+    </style>
+
+    <!-- These styles remain as they are-->
+
+    <!--[if (mso)|(mso 16)]>
+<style type="text/css">
+body, table, td, a, span, h1, h2, h3, h4, p { font-family: Arial, Helvetica, sans-serif !important; }
+a {text-decoration: none;}
+</style>
+<![endif]-->
+
+    <!--[if mso>
+<style type="text/css">
+body {
+margin: 0 !important;
+padding: 0 !important;
+font-family: Segoe UI, Arial, sans-serif;
+}
+table, td, div, p {
+font-family: Segoe UI, Arial, sans-serif;
+line-height: normal;
+}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif-->
+  </head>
+  <body id="bodyTable" class="body" style="-webkit-text-size-adjust: none;-ms-text-size-adjust: none; margin: 0; padding: 0; width: 100%; background-color: #ffffff;">
+    
+    <table id="app" class="full-wrap" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #fdfdfd;  width: 100%;">
+      <!-- HEADER START-->
+      <tr>
+        <td align="center">
+          <table class="w100 ow100" align="center" cellpadding="0" cellspacing="0" border="0" width="700" style="background-color: #fdfdfd;">
+
+            <!-- Hero Image-->
+            <tr>
+              <td align="center">
+                <table class="w100 ow100" width="700" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color: #fdfdfd;">
+                  <tr>
+
+                    <!-- * BACKGROUND-IMAGE 354x200 * -->
+                    <td class="imageswap" background="https://api.nano.to/email/background.png" align="center" style="background: #fdfdfd url(https://api.nano.to/email/background.png); background-image: url(https://api.nano.to/email/background.png);background-size: 100% auto; background-position:bottom; background-repeat: no-repeat; background-color: #fdfdfd; ">
+
+                      <!--[if gte mso 9]>
+  <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block; width: 700px; height: 768px;"
+  src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5db0a0bc28274528b86833fa/original.jpg?1571856572"
+  />
+  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style=" border: 0;display: inline-block;position: absolute; width: 700px; height:768px;">
+  <v:fill opacity="0%" color="#fdfdfd" />
+  <v:textbox inset="0,0,0,0">
+  <![endif]-->
+                      <div>
+                        <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+                          <tr>
+                            <td align="center">
+                              <table class="w100" align="center" cellpadding="0" cellspacing="0" border="0" width="100">
+
+                                <!-- image start -->
+                                <tr>
+                                  <td class="padt15 padb5" align="center" style="padding-top: 25px; padding-bottom: 0px; ">
+                                    <a href="https://nano.org?ref=nano-to-email" target="_blank" style="font-size: 24px; text-align:center; color: #000; font-family: Georgia, serif; font-weight: 600;">
+                                      <img class="logo" src="https://rpc.nano.to/assets/favicon.png" width="80" role="presentation" aria-hidden="true" style="border: none; width: 80px; max-width: 100%; padding-top: 20px ">
+                                    </a>
+                                  </td>
+                                </tr>
+
+                                <!-- image end -->
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center">
+                              <table class="w90" width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td class="padt0" align="center" style="padding-top: 0px; ">
+                                    <table class="w100 " cellpadding="0" cellspacing="0" border="0" width="78%">
+                                      <tr>
+                                        <td class="padt20" align="left" style=" ">
+                                          <table class="w100" align="left" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+                                            <!-- copy start -->
+                                            <tr>
+                                              <td class="padt0 padb5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; padding-top: 30px; padding-bottom: 10px ; font-size: 4 6px; line-height: 52px">
+                                                <a href="https://nano.to" style="color: inherit; text-decoration: none" target="_blank"><div style=" line-height: 30px; ">NANO.TO PRESENTS</div></a>
+                                                <h1 style="font-size: 40px; line-height: 42px">You've Got Nano</h1>
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; padding-top: 3px; padding-bottom: 10px ; font-size: 4 6px; line-height: 52px">
+                                                <h4 style="font-size: 22px; line-height: 22px; margin-bottom: 30px">Send Nano To Any Email Address</h4>
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <span style="position: relative" v-for="(email, index) of emails">
+                                                  <input style="font-size: 18px;padding: 10px; min-width: 300px; background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" placeholder="Email Address" v-model="email.email">
+                                                  <div v-if="index + 1 < emails.length" style=" font-weight: lighter; position: absolute; top: -18px; font-size: 30px; right: -30px; opacity: 0.5; cursor: pointer " @click="emails = emails.filter(a => a !== email)">-</div>
+                                                  <div v-if="index + 1 === emails.length" style=" font-weight: lighter; position: absolute; top: -18px; font-size: 30px; right: -30px; opacity: 0.5; cursor: pointer " @click="emails.push({ id: index + 1, email: '' })">+</div>
+                                                </span>
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" type="number" v-model="amount" placeholder="Nano Amount">
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="refund_address" placeholder="Refund Address">
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td style="color: rgb(0, 0, 1);font-family: SofiaPro, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px;line-height: 52px;"><span @click="advanced = !advanced" style=" border-bottom: 1px solid; opacity: 0.5; ">Advanced Settings</span></td>
+                                            </tr>
+
+                                            <tr v-if="advanced">
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="from" placeholder="From (Name or Email)">
+                                              </td>
+                                            </tr>
+
+                                            <tr v-if="advanced">
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 30px;" v-model="message" placeholder="Special Message">
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 30px;font-size: 4 6px;line-height: 52px">
+                                                  <span @click="send()" style="padding: 10px 60px 12px 50px;background: rgb(32, 156, 233);border-radius: 30px;color: rgb(255, 255, 255);font-size: 18px;min-width: 190px;">Send Nano →</span>
+                                                  <div style="font-size:16px;opacity:1;color:black">Service Fee: {{ emails.length === 1 ? 'FREE' : Number((emails.length - 1) * 0.1).toFixed(2) + ' NANO' }}</div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- copy start -->
+                                            <tr>
+                                              <td class="padt0 padb5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; padding-top: 3px; padding-bottom: 10px ; font-size: 4 6px; line-height: 52px">
+                                                <a href="https://docs.nano.to/email" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;">
+                                                  <h4 style="font-size: 22px;line-height: 22px;margin-top: 0px;border-top: 1px solid rgba(0, 0, 0, 0.1);padding-top: 25px;padding-bottom: 15px;">Developer API</h4>
+                                                </a>
+                                              </td>
+                                            </tr>
+
+                                            <!-- copy start -->
+                                            <tr>
+                                              <td class="padt0 padb5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; padding-top: 3px; padding-bottom: 10px ; font-size: 4 6px; line-height: 52px">
+                                                <h4 style="font-size: 22px;line-height: 22px;margin-top: 0;border-top: 1px solid #0000001a;padding-top: 30px;">Download Nano Wallet</h4>
+                                              </td>
+                                            </tr>
+
+                                            <!-- copy end -->
+                                            <tr>
+                                              <td align="center">
+                                                <table class=" " align="center" cellpadding="0" cellspacing="0" border="0" width="280">
+
+                                                  <!-- image start -->
+                                                  <tr>
+                                                    <td class="padt15 padb5" align="center" style="padding-top: 15px; padding-bottom: 0px; ">
+                                                      <a href="https://apps.apple.com/us/app/natrium-nano-wallet/id1451425707" target="_blank" style="font-size: 14px; text-align:center; color: #000; font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400;">
+                                                        <img class="" src="https://api.nano.to/email/app-store.png" alt="download on the App&nbsp;Store" width="120" role="presentation" aria-hidden="true" style="border: none;  width: 120px; max-width: 100%; ">
+                                                      </a>
+                                                    </td>
+                                                    <td class="padt15 padb5" align="center" style="padding-top: 15px; padding-bottom: 0px; ">
+                                                      <a href="https://play.google.com/store/apps/details?id=co.banano.natriumwallet&hl=en_US&gl=US" target="_blank" style="font-size: 14px; text-align:center; color: #000; font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400;">
+                                                        <img class="" src="https://api.nano.to/email/google-play.png" alt="get it on Google&nbsp;Play" width="128" role="presentation" aria-hidden="true" style="border: none;  width: 129px; max-width: 100%; ">
+                                                      </a>
+                                                    </td>
+                                                  </tr>
+
+                                                  <!-- image end -->
+                                                </table>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center">
+                                                <table class="w50" align="center" cellpadding="0" cellspacing="0" border="0" width="480">
+
+                                                  <!-- image start -->
+                                                  <tr>
+                                                    <td class="padt20 padb5" align="center" style="padding-top: 35px; padding-bottom: 0px; ">
+                                                      <img class="" src="https://api.nano.to/email/wallet.png" width="480" role="presentation" aria-hidden="true" style="border: none;  width: 480px; max-width: 100%; ">
+                                                    </td>
+                                                  </tr>
+
+                                                  <!-- image end -->
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="padt0 " align="center" style="padding-top:1px; background-color:#fbf8f5">
+                              <table class="ow100" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td align="center" style=" font-size: 2px; line-height: 2px;">&nbsp;</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+
+                      <!--[if gte mso 9]>
+  </v:textbox>
+  </v:fill>
+  </v:rect>
+  </v:image>
+  <![endif]-->
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- HEADER END-->
+
+      <!-- BODY START-->
+      <tr>
+        <td align="center">
+          <table class="w100 ow100" align="center" cellpadding="0" cellspacing="0" border="0" width="700" style="background-color: #fdfdfd;">
+            <tr>
+              <td align="center" style="padding-bottom: 0px;">
+                <table class="w100 ow100" width="700" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color: #fbf8f5;">
+                  <tr>
+                    <td class="" align="center" style="padding-bottom: 0px;">
+                      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td align="center">
+                            <table class="w100  " align="center" cellpadding="0" cellspacing="0" border="0" width="600" style="background-color: #fbf8f5;">
+                              <tr>
+                                <td class="padt5" align="center" style="padding-bottom: 60px;">
+                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                    <!-- 2 pack start -->
+                                    <tr>
+                                      <td class="padt10" align="center" style="padding-top: 45px;">
+                                        <table class="w85" width="78%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td valign="top" class="padt10">
+
+                                              <!--  tile 1 -->
+                                              <table class="column33a" width="75" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padb0 padt20">
+                                                    <table class="w90" width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                      <!-- image start -->
+                                                      <tr>
+                                                        <td class="padb10" style="padding-bottom: 0px; padding-top: 7px">
+                                                          <a href="#" target="_blank" style="color: blue; font-family: Helvetica, Arial, sans-serif, 'CustomFont'; text-decoration: none;">
+                                                            <img class="border" src="https://api.nano.to/email/instant.png?v=1" alt="" width="70" role="presentation" aria-hidden="true" style="border: none; display: block; width: 100%; ">
+                                                          </a>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- image end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <!-- tite 1 end -->
+
+                                              <!--[if mso]></td><td valign="top"><![endif]-->
+
+                                              <!--  Prop 2 -->
+                                              <table class="w70" width="390" border="0" align="right" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padt0" align="right">
+                                                    <table class="w100" width="90%" border="0" align="right" cellpadding="0" cellspacing="0">
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt20" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: left; padding-top: 0px; padding-bottom: 5px ; font-size: 22px; line-height: 125%">
+                                                          <h3 style="font-size: 22px; line-height: 125%; font-weight: 500 !important;">Instant Settlements</h3>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: left; font-size: 15px; line-height: 150%; padding-top: 5px; ">
+                                                          <p class="" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 18px;line-height: 26px;text-align: left; margin: 0; ">You don't have to wait to send or receive, Nano settles instantly, everytime.</p>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                                    <!-- 2 pack end -->
+
+                                    <!-- 2 pack start -->
+                                    <tr>
+                                      <td class="padt10" align="center" style="padding-top: 30px;">
+                                        <table class="w85" width="78%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td valign="top" class="padt10">
+
+                                              <!--  tile 1 -->
+                                              <table class="column33a" width="75" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padb0 padt20">
+                                                    <table class="w90" width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                      <!-- image start -->
+                                                      <tr>
+                                                        <td class="padb10 padt15" style="padding-bottom: 0px; padding-top: 20px">
+                                                          <a href="#" target="_blank" style="color: blue; font-family: Helvetica, Arial, sans-serif, 'CustomFont'; text-decoration: none;">
+                                                            <img class="border" src="https://api.nano.to/email/feeless.png" alt="" width="70" role="presentation" aria-hidden="true" style="border: none; display: block; width: 100%; ">
+                                                          </a>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- image end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <!-- tite 1 end -->
+
+                                              <!--[if mso]></td><td valign="top"><![endif]-->
+
+                                              <!--  Prop 2 -->
+                                              <table class="w70" width="390" border="0" align="right" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padt0" align="right">
+                                                    <table class="w100" width="90%" border="0" align="right" cellpadding="0" cellspacing="0">
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt20" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: left; padding-top: 10px; padding-bottom: 5px ; font-size: 22px; line-height: 125%">
+                                                          <h3 style="font-size: 22px; line-height: 125%; font-weight: 500 !important;">Feeless Transactions</h3>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: left; font-size: 15px; line-height: 150%; padding-top: 5px; ">
+                                                          <p class="" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 18px;line-height: 26px;text-align: left; margin: 0; ">It does not cost anything to send  or receive Nano, practical for all the world.</p>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                                    <!-- 2 pack end -->
+
+                                    <!-- 2 pack start -->
+                                    <tr>
+                                      <td class="padt10" align="center" style="padding-top: 30px;">
+                                        <table class="w85" width="78%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td valign="top" class="padt10">
+
+                                              <!--  tile 1 -->
+                                              <table class="column33a" width="75" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padb0 padt20">
+                                                    <table class="w90" width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+
+                                                      <!-- image start -->
+                                                      <tr>
+                                                        <td class="padb10 padt10" style="padding-bottom: 0px; padding-top: 15px">
+                                                          <a href="#" target="_blank" style="color: blue; font-family: Helvetica, Arial, sans-serif, 'CustomFont'; text-decoration: none;">
+                                                            <img class="border" src="https://api.nano.to/email/eco-friendly.png" alt="" width="70" role="presentation" aria-hidden="true" style="border: none; display: block; width: 100%; ">
+                                                          </a>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- image end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+
+                                              <!-- tite 1 end -->
+
+                                              <!--[if mso]></td><td valign="top"><![endif]-->
+
+                                              <!--  Prop 2 -->
+                                              <table class="w70" width="390" border="0" align="right" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td class="padt0" align="right">
+                                                    <table class="w100" width="90%" border="0" align="right" cellpadding="0" cellspacing="0">
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt20" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: left; padding-top: 10px; padding-bottom: 5px ; font-size: 22px; line-height: 125%">
+                                                          <h3 style="font-size: 22px; line-height: 125%; font-weight: 500 !important;">Eco-Friendly</h3>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+
+                                                      <!-- copy start -->
+                                                      <tr>
+                                                        <td class="padt5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: left; font-size: 15px; line-height: 150%; padding-top: 5px; ">
+                                                          <p class="" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 18px;line-height: 26px;text-align: left; margin: 0; ">Without mining, printing or minting, Nano is the ideal solution for digital money.</p>
+                                                        </td>
+                                                      </tr>
+
+                                                      <!-- copy end -->
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+
+                              
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+   
+  </body>
+  <script src="https://pay.nano.to/latest.js"></script>
+  <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+  var app = new Vue({
+      el: '#app',
+      data: {
+          emails: [{}],
+          advanced: false,
+          amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
+          refund_address: localStorage.getItem('refund_address') ? localStorage.getItem('refund_address') : '',
+          from: '',
+          message: '',
+      },
+      watch: {
+        amount() { localStorage.setItem('amount', this.amount) },
+        refund_address() { localStorage.setItem('refund_address', this.refund_address) }
+      },
+      mounted() {
+          // this.load()
+      },
+      methods: {
+         send() {
+            axios.post('https://rpc.nano.to', { 
+              "action": "nano_email",
+              "refund_address": this.refund_address,
+              "amount": this.amount,
+              "from": this.from,
+              "message": this.message,
+              "emails": this.emails.map(a => a.email)
+            }).then((res) => {
+              NanoPay.open({ 
+                checkout: res.data.id,
+                disclaimer: this.emails.length === 1 ? `Email recipient will receive ${res.data.subtotal / this.emails.length} NANO`  : `Each email recipient will receive ${res.data.subtotal / this.emails.length} NANO`,
+                success: () => {
+                  alert('Nano sent succesfully.')
+                  window.location.reload()
+                }
+              })
+            })
+         }
+      },
+      computed: {}
+  })
+</script>
+  
+</html>
