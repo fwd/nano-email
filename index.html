@@ -161,7 +161,7 @@
       h4 {
         color: #000001;
         font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 18px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 125%;
@@ -352,7 +352,7 @@
           line-height: 125% !important;
         }
         h4 {
-          font-size: 16px !important;
+          font-size: 18px !important;
           line-height: 150% !important;
         }
         p {
@@ -487,22 +487,22 @@ line-height: normal;
                                             <tr>
                                               <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
                                                 <span style="position: relative" v-for="(email, index) of emails">
-                                                  <input style="font-size: 18px;padding: 10px; min-width: 300px; background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" placeholder="Email Address" v-model="email.email">
+                                                  <input style="font-size: 18px;padding: 10px 20px; min-width: 250px; background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" placeholder="Email Address" v-model="email.email">
                                                   <div v-if="index + 1 < emails.length" style=" font-weight: lighter; position: absolute; top: -18px; font-size: 30px; right: -30px; opacity: 0.5; cursor: pointer " @click="emails = emails.filter(a => a !== email)">-</div>
-                                                  <div v-if="index + 1 === emails.length" style=" font-weight: lighter; position: absolute; top: -18px; font-size: 30px; right: -30px; opacity: 0.5; cursor: pointer " @click="emails.push({ id: index + 1, email: '' })">+</div>
+                                                  <div v-if="index + 1 === emails.length" style=" font-weight: lighter; position: absolute; top: -18px; font-size: 30px; right: -28px; opacity: 0.5; cursor: pointer " @click="emails.push({ id: index + 1, email: '' })">+</div>
                                                 </span>
                                               </td>
                                             </tr>
 
                                             <tr>
                                               <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
-                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" type="number" v-model="amount" placeholder="Nano Amount">
+                                                <input style="font-size: 18px;padding: 10px 20px; min-width: 250px; background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" type="number" v-model="amount" placeholder="Nano Amount">
                                               </td>
                                             </tr>
 
                                             <tr>
                                               <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
-                                                <input style="font-size: 18px;padding: 10px 60px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="refund_address" placeholder="Refund Address">
+                                                <input style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="refund_address" placeholder="Refund Address">
                                               </td>
                                             </tr>
 
@@ -532,9 +532,15 @@ line-height: normal;
                                             <!-- copy start -->
                                             <tr>
                                               <td class="padt0 padb5" style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: bold; text-align: center; padding-top: 3px; padding-bottom: 10px ; font-size: 4 6px; line-height: 52px">
-                                                <a href="https://docs.nano.to/email" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;">
-                                                  <h4 style="font-size: 22px;line-height: 22px;margin-top: 0px;border-top: 1px solid rgba(0, 0, 0, 0.1);padding-top: 25px;padding-bottom: 15px;">Developer API</h4>
-                                                </a>
+                                                <div style="display: flex; align-content: center; justify-content: center; font-size: 22px;line-height: 22px;margin-top: 0px;border-top: 1px solid rgba(0, 0, 0, 0.1);padding-top: 25px;padding-bottom: 15px;">
+                                                  <a href="mailto:business@nano.to?subject=Nano Email Support" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;">
+                                                    <h4>Nano.to Support</h4>
+                                                  </a>
+                                                  <a style="padding: 0 30px">·</a>
+                                                  <a href="https://docs.nano.to/email" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;">
+                                                    <h4>Developer API</h4>
+                                                  </a>
+                                                </div>
                                               </td>
                                             </tr>
 
