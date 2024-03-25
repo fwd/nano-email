@@ -907,6 +907,9 @@ line-height: normal;
                 success: () => {
                   alert('Nano sent succesfully.')
                   window.location.reload()
+                },
+                cancel: () => {
+                  this.sending = false
                 }
               })
             })
