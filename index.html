@@ -863,6 +863,7 @@ line-height: normal;
   var app = new Vue({
       el: '#app',
       data: {
+          sending: false,
           emails: [{}],
           advanced: false,
           amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
@@ -879,16 +880,18 @@ line-height: normal;
       },
       methods: {
          send() {
-            if (!this.emails.length) return alert('At least one email address is required.')
+            if (this.sending) return
+            if (this.emails.filter(a => a.email).length <= 0) return alert('At least one email address required.')
             if (!Number(this.amount)) return alert('Amount must be greater than 0.')
             if (!this.refund_address) return alert('Refund address required.')
+            this.sending = true
             axios.post('https://rpc.nano.to', { 
               "action": "nano_email",
               "refund_address": this.refund_address,
               "amount": this.amount,
               "from": this.from,
               "message": this.message,
-              "emails": this.emails.map(a => a.email)
+              "emails": this.emails.filter(a => a.email).map(a => a.email)
             }).then((res) => {
               NanoPay.open({ 
                 checkout: res.data.id,
