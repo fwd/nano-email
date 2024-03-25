@@ -879,9 +879,17 @@ line-height: normal;
           // this.load()
       },
       methods: {
+        validateEmail(email) {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+        },
          send() {
             if (this.sending) return
             if (this.emails.filter(a => a.email).length <= 0) return alert('At least one email address required.')
+            if (this.emails.find(a => !this.validateEmail(a.email))) return alert('Invalid email address provided.')
             if (!Number(this.amount)) return alert('Amount must be greater than 0.')
             if (!this.refund_address) return alert('Refund address required.')
             this.sending = true
