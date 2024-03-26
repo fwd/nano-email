@@ -518,7 +518,13 @@ line-height: normal;
 
                                             <tr v-if="advanced">
                                               <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
-                                                <input style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 30px;" v-model="message" placeholder="Special Message">
+                                                <input style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="message" placeholder="Special Message">
+                                              </td>
+                                            </tr>
+
+                                            <tr v-if="advanced">
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <input type="email" style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 30px;" v-model="email_receipt" placeholder="Receive Email Receipt">
                                               </td>
                                             </tr>
 
@@ -869,6 +875,7 @@ line-height: normal;
   var app = new Vue({
       el: '#app',
       data: {
+          email_receipt: '',
           sending: false,
           emails: [{}],
           advanced: false,
@@ -905,6 +912,7 @@ line-height: normal;
               "amount": this.amount,
               "from": this.from,
               "message": this.message,
+              "email_receipt": this.email_receipt,
               "emails": this.emails.filter(a => a.email).map(a => a.email)
             }).then((res) => {
               NanoPay.open({ 
