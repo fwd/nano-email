@@ -875,18 +875,19 @@ line-height: normal;
   var app = new Vue({
       el: '#app',
       data: {
-          email_receipt: '',
           sending: false,
           emails: [{}],
           advanced: false,
           amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
           refund_address: localStorage.getItem('refund_address') ? localStorage.getItem('refund_address') : '',
+          email_receipt: localStorage.getItem('email_receipt') ? localStorage.getItem('email_receipt') : '',
           from: '',
           message: '',
       },
       watch: {
         amount() { localStorage.setItem('amount', this.amount) },
         refund_address() { localStorage.setItem('refund_address', this.refund_address) }
+        email_receipt() { localStorage.setItem('email_receipt', this.email_receipt) }
       },
       mounted() {
           // this.load()
@@ -899,7 +900,7 @@ line-height: normal;
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           );
         },
-         send() {
+        send() {
             if (this.sending) return
             if (this.emails.filter(a => a.email).length <= 0) return alert('At least one email address required.')
             if (this.emails.find(a => !this.validateEmail(a.email))) return alert('Invalid email address provided.')
