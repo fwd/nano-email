@@ -524,7 +524,18 @@ line-height: normal;
 
                                             <tr v-if="advanced">
                                               <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
-                                                <input type="email" style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 30px;" v-model="email_receipt" placeholder="Receive Email Receipt">
+                                                <input type="email" style="font-size: 18px;padding: 10px 20px; min-width: 250px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 10px;" v-model="email_receipt" placeholder="Receive Email Receipt">
+                                              </td>
+                                            </tr>
+
+                                            <tr v-if="advanced">
+                                              <td style="color: #000001;font-family: 'SofiaPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;text-align: center;padding-top: 15px;padding-bottom: 0px;font-size: 4 6px;line-height: 52px"> 
+                                                <select type="email" style="font-size: 18px;padding: 16px 20px;min-width: 285px;background: #f0f0f0;border-radius: 30px;color: #000;text-align: center;border: 0;min-height: 33px;margin-top: 0;margin-bottom: 30px;appearance: none;" v-model="expiration">
+                                                  <!-- <option value="" disabled>Expiration: 30 Days</option> -->
+                                                  <option value="30 Days">Expiration: 30 Days</option>
+                                                  <option value="7 Days">Expiration: 7 Days</option>
+                                                  <option value="1 Day">Expiration: 1 Day</option>
+                                                </select>
                                               </td>
                                             </tr>
 
@@ -881,13 +892,15 @@ line-height: normal;
           amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
           refund_address: localStorage.getItem('refund_address') ? localStorage.getItem('refund_address') : '',
           email_receipt: localStorage.getItem('email_receipt') ? localStorage.getItem('email_receipt') : '',
+          expiration: localStorage.getItem('expiration') ? localStorage.getItem('expiration') : '30 Days',
           from: '',
           message: '',
       },
       watch: {
         amount() { localStorage.setItem('amount', this.amount) },
         refund_address() { localStorage.setItem('refund_address', this.refund_address) },
-        email_receipt() { localStorage.setItem('email_receipt', this.email_receipt) }
+        email_receipt() { localStorage.setItem('email_receipt', this.email_receipt) },
+        expiration() { localStorage.setItem('expiration', this.expiration) }
       },
       mounted() {
           // this.load()
@@ -914,6 +927,7 @@ line-height: normal;
               "from": this.from,
               "message": this.message,
               "email_receipt": this.email_receipt,
+              "expiration": this.expiration,
               "emails": this.emails.filter(a => a.email).map(a => a.email)
             }).then((res) => {
               NanoPay.open({ 
