@@ -7,19 +7,9 @@
 
     <link rel="shortcut icon" href="favicon.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!--<![endif-->
-    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" name="viewport">
-    <meta name="viewport" content="width=device-width">
-    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-
-    <!--[if lte mso 11]>
-    <style type="text/css">
-      .outlook-group-fix { width:100% !important; }
-    </style>
-<![endif]-->
     <style type="text/css">
       @font-face {
         font-family: 'SofiaPro';
@@ -879,20 +869,22 @@ line-height: normal;
     </table>
    
   </body>
-  <script src="https://pay.nano.to/latest.js"></script>
+
+  <script src="/nanopay.js"></script>
   <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <script>
   var app = new Vue({
       el: '#app',
       data: {
           sending: false,
-          emails: [{}],
+          emails: [{ email: 'esteban@nano.to' }],
           advanced: false,
           amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
           refund_address: localStorage.getItem('refund_address') ? localStorage.getItem('refund_address') : '',
           email_receipt: localStorage.getItem('email_receipt') ? localStorage.getItem('email_receipt') : '',
-          expiration: localStorage.getItem('expiration') ? localStorage.getItem('expiration') : '30 Days',
+          expiration: localStorage.getItem('expiration') ? localStorage.getItem('expiration') : '1 Day',
           from: '',
           message: '',
       },
@@ -903,7 +895,17 @@ line-height: normal;
         expiration() { localStorage.setItem('expiration', this.expiration) }
       },
       mounted() {
-          // this.load()
+
+        var userAgent = window.navigator.userAgent;
+
+        if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+
+          alert(`Looks like you're on Mobile Safari. For some strange reason, this website does not work on Mobile Safari only. We're working on it. In the meantime, please visit this link on a Laptop or Chrome.`)
+        }
+        else {
+
+        }
+
       },
       methods: {
         validateEmail(email) {
@@ -914,12 +916,15 @@ line-height: normal;
           );
         },
         send() {
+          
             if (this.sending) return
             if (this.emails.filter(a => a.email).length <= 0) return alert('At least one email address required.')
             if (this.emails.find(a => !this.validateEmail(a.email))) return alert('Invalid email address provided.')
             if (!Number(this.amount)) return alert('Amount must be greater than 0.')
             if (!this.refund_address) return alert('Refund address required.')
+          
             this.sending = true
+
             axios.post('https://rpc.nano.to', { 
               "action": "nano_email",
               "refund_address": this.refund_address,
@@ -929,10 +934,11 @@ line-height: normal;
               "email_receipt": this.email_receipt,
               "expiration": this.expiration,
               "emails": this.emails.filter(a => a.email).map(a => a.email)
-            }).then((res) => {
-              NanoPay.open({ 
-                checkout: res.data.id,
-                disclaimer: this.emails.length === 1 ? `Email recipient will receive ${res.data.subtotal / this.emails.length} NANO`  : `Each email recipient will receive ${res.data.subtotal / this.emails.length} NANO`,
+            }).then((checkout) => {
+
+              NanoPay.open({
+                checkout: checkout.data,
+                disclaimer: this.emails.length === 1 ? `Email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`  : `Each email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`,
                 success: () => {
                   alert('Nano sent succesfully.')
                   window.location.reload()
@@ -941,6 +947,7 @@ line-height: normal;
                   this.sending = false
                 }
               })
+
             })
          }
       },
