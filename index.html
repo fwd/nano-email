@@ -937,7 +937,7 @@ line-height: normal;
             }).then((checkout) => {
 
               NanoPay.open({
-                checkout: checkout.data,
+                checkout: checkout.data.id, // NanoPay supports us passing the entire 'checkout.data' JSON response, or just the ID. 
                 disclaimer: this.emails.length === 1 ? `Email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`  : `Each email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`,
                 success: () => {
                   alert('Nano sent succesfully.')
