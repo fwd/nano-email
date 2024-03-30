@@ -5,11 +5,10 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-This repo contains 3 files
+This repo contains 2 main files
 
 - index.html (Landing Page)
 - nanopay.js (Local version of [https://github.com/fwd/NanoPay](https://github.com/fwd/NanoPay))
-- favicon.js
 
 ## Bugs & Features ⭐️
 
