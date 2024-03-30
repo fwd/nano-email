@@ -15,7 +15,7 @@ This repo contains 3 files
 
 **Active Bug Bounty**
 
-- [Does Not Work in Mobile Safari](https://github.com/fwd/nano-email/issues/1)
+- [Does Not Work in Mobile Safari](https://github.com/fwd/nano-email/issues/1) **50 NANO**
 
 Give a star if this project helped you. Contributions, issues and features are welcome at [issues page](https://github.com/fwd/nano-email).
 
