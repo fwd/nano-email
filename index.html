@@ -879,7 +879,7 @@ line-height: normal;
       el: '#app',
       data: {
           sending: false,
-          emails: [{ email: 'esteban@nano.to' }],
+          emails: [{ email: '' }],
           advanced: false,
           amount: localStorage.getItem('amount') ? localStorage.getItem('amount') : '',
           refund_address: localStorage.getItem('refund_address') ? localStorage.getItem('refund_address') : '',
@@ -896,16 +896,7 @@ line-height: normal;
       },
       mounted() {
 
-        var userAgent = window.navigator.userAgent;
-
-        if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
-
-          alert(`Looks like you're on Mobile Safari. For some strange reason, this website does not work on Mobile Safari only. We're working on it. In the meantime, please visit this link on a Laptop or Chrome.`)
-        }
-        else {
-
-        }
-
+      
       },
       methods: {
         validateEmail(email) {
