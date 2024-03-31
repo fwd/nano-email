@@ -937,6 +937,11 @@ line-height: normal;
               "emails": this.emails.filter(a => a.email).map(a => a.email)
             }).then((checkout) => {
 
+              if (checkout.data.error) {
+                this.sending = false
+                return alert(checkout.data.message)
+              }
+
               NanoPay.open({
                 checkout: checkout.data.id, // NanoPay supports us passing the entire 'checkout.data' JSON response, or just the ID. 
                 disclaimer: this.emails.length === 1 ? `Email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`  : `Each email recipient will receive ${checkout.data.subtotal / this.emails.length} NANO`,
