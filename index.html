@@ -922,6 +922,7 @@ line-height: normal;
             if (this.emails.find(a => !this.validateEmail(a.email))) return alert('Invalid email address provided.')
             if (!Number(this.amount)) return alert('Amount must be greater than 0.')
             if (!this.refund_address) return alert('Refund address required.')
+            if (!this.refund_address.includes('nano_')) return alert('Invalid refund address. Must be Nano address.')
           
             this.sending = true
 
